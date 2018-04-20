@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+</head>
+<body>
+
+
+    <div style="width: 700px;margin: 0 auto">
+        <h1>服务器列表</h1>
+            {% include 'includes/nb-search.html' %}
+            {% include 'includes/nb-tpl.html' %}
+    </div>
+
+    <script src="/static/jquery-3.3.1.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="/static/nb-list.js"></script>
+    <script>
+        $.xx('/backend/curd_json.html');
+    </script>
+</body>
+</html>

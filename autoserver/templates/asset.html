@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/static/pagination/pagination.css">
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div style="width: 700px;margin: 0 auto">
+        <h1>资产列表</h1>
+        {% include 'includes/nb-search.html' %}
+        {% include 'includes/nb-tpl.html' %}
+        <div class="M-box3 m-style"></div>
+    </div>
+
+
+
+
+    <script src="/static/jquery-3.3.1.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="/static/nb-list.js"></script>
+    <script src="/static/pagination/jquery.pagination.js"></script>
+    <script>
+        $.xx('/backend/asset_json.html');
+    </script>
+
+{#    <script>#}
+{#        $('.M-box3').pagination({#}
+{#            //pageCount: 20,#}
+{#            jump: true,#}
+{#            coping: true,#}
+{#            homePage: '首页',#}
+{#            endPage: '末页',#}
+{#            prevContent: '上页',#}
+{#            nextContent: '下页',#}
+{#            showData : 10,#}
+{#            callback: function (api) {#}
+{#                console.log(api.getCurrent());#}
+{#                api.setPageCount();#}
+{#            }#}
+{#        });#}
+{#    </script>#}
+</body>
+</html>
