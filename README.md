@@ -103,6 +103,8 @@ def API_check(func):
 
 
 插件式处理数据，与client端类似
+__init__.py
+class PluginManager(object):
     def exec_plugin(self):
         for name,p_path in settings.PLUGINS_DICT.items():
             module_path,class_name = p_path.rsplit(".",1)
