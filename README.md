@@ -1,10 +1,10 @@
 # cmdb
 
 ## 亮点
-工厂模式
-使用了插件式插入类
-在__init__里对插件传到统一接口函数
-使用api验证
+工厂模式  
+使用了插件式插入类  
+在__init__里对插件传到统一接口函数  
+使用api验证  
 
 
 
@@ -12,15 +12,15 @@
 # client端
 
 ## 流程
-入口
-在script总入口使用client的execute
-client使用插件类获取server_info
-插件类工作流程：
-    导入所有插件
-    插件运行process方法，实则执行cmd方法
-        插件获取content
-        parse解析content，获取结果
-client发送到api
+入口  
+在script总入口使用client的execute  
+client使用插件类获取server_info  
+插件类工作流程：  
+    导入所有插件  
+    插件运行process方法，实则执行cmd方法  
+        插件获取content  
+        parse解析content，获取结果  
+client发送到api  
 
 
 
@@ -64,14 +64,14 @@ class PluginManager(object):
 		
 
 # server端
-repository  统一数据库
-backend  后台管理+前端页面，可与api分离
-api  可与backend分离
+repository  统一数据库  
+backend  后台管理+前端页面，可与api分离  
+api  可与backend分离  
 
 
-api认证，time-key-record
-client端发送server_info到api，api把数据存入数据库
-backend端访问数据，供前端页面使用
+api认证，time-key-record  
+client端发送server_info到api，api把数据存入数据库  
+backend端访问数据，供前端页面使用  
 
 
 api认证
