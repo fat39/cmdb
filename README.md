@@ -2,7 +2,7 @@
 
 # client端
 
-# 流程
+## 流程
 入口
 在script总入口使用client的execute
 client使用插件类获取server_info
@@ -17,8 +17,9 @@ client发送到api
 
 
 
-# 插件式导入模块
-setting.py
+## 插件式导入模块
+### setting.py
+```
 PLUGINS_DICT = {
     "basic":"src.plugins.basic.Basic",
     "board":"src.plugins.board.Board",
@@ -27,8 +28,10 @@ PLUGINS_DICT = {
     "memory":"src.plugins.memory.Memory",
     "nic":"src.plugins.nic.Nic",
 }
+```
 
-__init__.py
+### __init__.py
+```
 class PluginManager(object):
 
     def exec_plugin(self):
@@ -48,7 +51,7 @@ class PluginManager(object):
                     obj = cls.initial()  # 钩子
                 else:
                     obj = cls()
-
+```
 		
 
 # server端
@@ -63,6 +66,7 @@ backend端访问数据，供前端页面使用
 
 
 api认证
+```
 def API_check(func):
     def wrapper(request,*args,**kwarg):
         if request.method == "GET":
@@ -99,11 +103,11 @@ def API_check(func):
         ret = func(request,*args,**kwarg)
         return ret
     return wrapper
+```
 
 
-
-## 插件式处理数据，与client端类似
-## __init__.py
+## 插件式处理数据，与client端类似，__init__.py
+```
 class PluginManager(object):
     def exec_plugin(self):
         for name,p_path in settings.PLUGINS_DICT.items():
@@ -116,8 +120,7 @@ class PluginManager(object):
                 else:
                     obj = cls()
                 obj.process(self.server_info,self.server_obj,self.compare_new_old)
-
-
+```
 
 
 
